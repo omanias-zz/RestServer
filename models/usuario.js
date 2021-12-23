@@ -19,6 +19,10 @@ const UsuarioSchema = Schema({
     required: true,
     emun: ["ADMIN_ROLE", "USER_ROLE"],
   },
+  estado: {
+    type: Boolean,
+    required: [true, "El estado es obligatorio"],
+  },
 });
 
 //Oculta __v y password en Postman
