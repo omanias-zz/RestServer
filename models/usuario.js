@@ -28,7 +28,9 @@ const UsuarioSchema = Schema({
 //Oculta __v y password en Postman
 
 UsuarioSchema.methods.toJSON = function () {
-  const { __v, password, ...usuario } = this.toObject();
+  const { __v, password, _id, ...usuario } = this.toObject();
+  //Transforma en _id en uid
+  usuario.uid = _id;
   return usuario;
 };
 

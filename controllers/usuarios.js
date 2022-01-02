@@ -55,6 +55,7 @@ const usuariosPost = async (req, res = response) => {
 const usuariosDelete = async (req, res = response) => {
   //No elimina físicamente un usuario sino que actualiza el estado a false.
   const { id } = req.params;
+  const uid = req.uid;
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
 
   res.json(usuario);
